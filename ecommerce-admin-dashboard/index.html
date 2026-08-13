@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>E-Commerce Admin Dashboard</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            🛒 <span>ShopAdmin</span>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="index.html" class="nav-link active">
+                📊 <span>Dashboard</span>
+            </a>
+
+            <a href="products.html" class="nav-link">
+                📦 <span>Products</span>
+            </a>
+
+            <a href="orders.html" class="nav-link">
+                🛍️ <span>Orders</span>
+            </a>
+
+            <a href="inventory.html" class="nav-link">
+                📋 <span>Inventory</span>
+            </a>
+
+            <a href="analytics.html" class="nav-link">
+                📈 <span>Analytics</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <a href="settings.html" class="nav-link">
+    ⚙️ <span>Settings</span>
+            </a>
+
+           <a href="#" id="logoutBtn" class="nav-link">
+    🚪 <span>Logout</span>
+</a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Top Header -->
+        <header class="topbar">
+
+            <div>
+                <h1>Dashboard</h1>
+                <p>Welcome back, Admin 👋</p>
+            </div>
+<button
+    id="themeToggle"
+    class="theme-toggle"
+    title="Toggle dark/light mode"
+>
+    🌙
+</button>             
+            <div class="admin-profile">
+                <div class="notification">
+                    🔔
+                </div>
+
+                <div class="profile">
+                    <div class="profile-avatar">A</div>
+
+                    <div>
+                        <strong>Admin</strong>
+                        <small>Administrator</small>
+                    </div>
+                </div>
+            </div>
+
+        </header>
+
+
+        <!-- Statistics Cards -->
+        <section class="stats-grid">
+
+            <!-- Revenue -->
+            <div class="stat-card">
+
+                <div class="stat-icon revenue-icon">
+                    💰
+                </div>
+
+                <div class="stat-info">
+                    <p>Total Revenue</p>
+                    <h2>₹1,24,500</h2>
+                    <span class="positive">↑ 12.5% from last month</span>
+                </div>
+
+            </div>
+
+
+            <!-- Orders -->
+            <div class="stat-card">
+
+                <div class="stat-icon orders-icon">
+                    🛒
+                </div>
+
+                <div class="stat-info">
+                    <p>Total Orders</p>
+                    <h2>1,248</h2>
+                    <span class="positive">↑ 8.2% from last month</span>
+                </div>
+
+            </div>
+
+
+            <!-- Customers -->
+            <div class="stat-card">
+
+                <div class="stat-icon customers-icon">
+                    👥
+                </div>
+
+                <div class="stat-info">
+                    <p>Total Customers</p>
+                    <h2>3,842</h2>
+                    <span class="positive">↑ 5.7% from last month</span>
+                </div>
+
+            </div>
+
+
+            <!-- Products -->
+            <div class="stat-card">
+
+                <div class="stat-icon products-icon">
+                    📦
+                </div>
+
+                <div class="stat-info">
+                    <p>Total Products</p>
+                    <h2>156</h2>
+                    <span class="negative">↓ 2.1% from last month</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Dashboard Content -->
+        <section class="dashboard-grid">
+
+            <!-- Revenue Overview -->
+            <div class="dashboard-card revenue-chart-card">
+
+                <div class="card-header">
+
+                    <div>
+                        <h3>Revenue Overview</h3>
+                        <p>Monthly revenue performance</p>
+                    </div>
+
+                    <select>
+                        <option>2026</option>
+                        <option>2025</option>
+                        <option>2024</option>
+                    </select>
+
+                </div>
+
+                <!-- Temporary chart area -->
+                <div class="chart-placeholder">
+
+                    <div class="chart-bars">
+
+                        <div class="bar" style="height: 40%;">
+                            <span>Jan</span>
+                        </div>
+
+                        <div class="bar" style="height: 55%;">
+                            <span>Feb</span>
+                        </div>
+
+                        <div class="bar" style="height: 45%;">
+                            <span>Mar</span>
+                        </div>
+
+                        <div class="bar" style="height: 70%;">
+                            <span>Apr</span>
+                        </div>
+
+                        <div class="bar" style="height: 60%;">
+                            <span>May</span>
+                        </div>
+
+                        <div class="bar" style="height: 80%;">
+                            <span>Jun</span>
+                        </div>
+
+                        <div class="bar" style="height: 65%;">
+                            <span>Jul</span>
+                        </div>
+
+                        <div class="bar" style="height: 90%;">
+                            <span>Aug</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Sales Summary -->
+            <div class="dashboard-card">
+
+                <div class="card-header">
+
+                    <div>
+                        <h3>Sales Summary</h3>
+                        <p>Current month</p>
+                    </div>
+
+                </div>
+
+                <div class="sales-summary">
+
+                    <div class="sales-item">
+                        <span>Electronics</span>
+                        <strong>₹45,200</strong>
+                    </div>
+
+                    <div class="progress">
+                        <div style="width: 80%;"></div>
+                    </div>
+
+
+                    <div class="sales-item">
+                        <span>Clothing</span>
+                        <strong>₹28,600</strong>
+                    </div>
+
+                    <div class="progress">
+                        <div style="width: 60%;"></div>
+                    </div>
+
+
+                    <div class="sales-item">
+                        <span>Accessories</span>
+                        <strong>₹18,900</strong>
+                    </div>
+
+                    <div class="progress">
+                        <div style="width: 45%;"></div>
+                    </div>
+
+
+                    <div class="sales-item">
+                        <span>Home & Living</span>
+                        <strong>₹12,300</strong>
+                    </div>
+
+                    <div class="progress">
+                        <div style="width: 30%;"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Bottom Section -->
+        <section class="bottom-grid">
+
+            <!-- Recent Orders -->
+            <div class="dashboard-card orders-card">
+
+                <div class="card-header">
+
+                    <div>
+                        <h3>Recent Orders</h3>
+                        <p>Latest customer orders</p>
+                    </div>
+
+                    <a href="orders.html" class="view-all">
+                        View All
+                    </a>
+
+                </div>
+
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Customer</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>#ORD001</td>
+                                <td>Rahul Kumar</td>
+                                <td>₹4,500</td>
+                                <td>
+                                    <span class="status delivered">
+                                        Delivered
+                                    </span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>#ORD002</td>
+                                <td>Priya Sharma</td>
+                                <td>₹2,800</td>
+                                <td>
+                                    <span class="status pending">
+                                        Pending
+                                    </span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>#ORD003</td>
+                                <td>Arjun Reddy</td>
+                                <td>₹7,200</td>
+                                <td>
+                                    <span class="status shipped">
+                                        Shipped
+                                    </span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>#ORD004</td>
+                                <td>Sneha Rao</td>
+                                <td>₹1,950</td>
+                                <td>
+                                    <span class="status delivered">
+                                        Delivered
+                                    </span>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                        <tbody 
+                         id="recentOrdersBody">
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </div>
+
+
+            <!-- Low Stock -->
+            <div class="dashboard-card">
+
+                <div class="card-header">
+
+                    <div>
+                        <h3>Low Stock Alert</h3>
+                        <p>Products that need attention</p>
+                    </div>
+
+                    <span class="alert-count">3</span>
+
+                </div>
+
+
+                <div class="stock-list">
+
+                    <div class="stock-item">
+
+                        <div class="product-mini-icon">
+                            🎧
+                        </div>
+
+                        <div class="stock-info">
+                            <strong>Wireless Headphones</strong>
+                            <span>Only 4 left</span>
+                        </div>
+
+                        <span class="stock-warning">
+                            Low
+                        </span>
+
+                    </div>
+
+
+                    <div class="stock-item">
+
+                        <div class="product-mini-icon">
+                            ⌨️
+                        </div>
+
+                        <div class="stock-info">
+                            <strong>Mechanical Keyboard</strong>
+                            <span>Only 3 left</span>
+                        </div>
+
+                        <span class="stock-warning">
+                            Low
+                        </span>
+
+                    </div>
+
+
+                    <div class="stock-item">
+
+                        <div class="product-mini-icon">
+                            📱
+                        </div>
+
+                        <div class="stock-info">
+                            <strong>Smartphone X</strong>
+                            <span>Only 2 left</span>
+                        </div>
+
+                        <span class="stock-danger">
+                            Critical
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+<script src="js/theme.js"></script>
+</body>
+</html>

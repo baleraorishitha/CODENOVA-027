@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Settings - ShopAdmin</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            🛒 <span>ShopAdmin</span>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="index.html" class="nav-link">
+                📊 <span>Dashboard</span>
+            </a>
+
+            <a href="products.html" class="nav-link">
+                📦 <span>Products</span>
+            </a>
+
+            <a href="orders.html" class="nav-link">
+                🛍️ <span>Orders</span>
+            </a>
+
+            <a href="inventory.html" class="nav-link">
+                📋 <span>Inventory</span>
+            </a>
+
+            <a href="analytics.html" class="nav-link">
+                📈 <span>Analytics</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <a href="settings.html" class="nav-link">
+    ⚙️ <span>Settings</span>
+            </a>
+
+           <a href="#" id="logoutBtn" class="nav-link">
+    🚪 <span>Logout</span>
+           </a>
+
+        </div>
+
+    </aside>
+
+
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>
+                    Settings
+                </h1>
+
+                <p>
+                    Manage your dashboard preferences
+                </p>
+
+            </div>
+
+
+            <div class="admin-profile">
+
+                <button
+                    id="themeToggle"
+                    class="theme-toggle"
+                >
+                    🌙
+                </button>
+
+                <div class="notification">
+                    🔔
+                </div>
+
+                <div class="profile">
+
+                    <div class="profile-avatar">
+                        A
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Admin
+                        </strong>
+
+                        <small>
+                            Administrator
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <section class="dashboard-card settings-card">
+
+            <h3>
+                General Settings
+            </h3>
+
+            <div class="setting-row">
+
+                <div>
+
+                    <strong>
+                        Store Name
+                    </strong>
+
+                    <p>
+                        Name displayed on your dashboard
+                    </p>
+
+                </div>
+
+                <input
+                    type="text"
+                    id="storeName"
+                    value="ShopAdmin"
+                >
+
+            </div>
+
+
+            <div class="setting-row">
+
+                <div>
+
+                    <strong>
+                        Email Notifications
+                    </strong>
+
+                    <p>
+                        Receive notifications about new orders
+                    </p>
+
+                </div>
+
+                <input
+                    type="checkbox"
+                    id="emailNotifications"
+                    checked
+                >
+
+            </div>
+
+
+            <div class="setting-row">
+
+                <div>
+
+                    <strong>
+                        Low Stock Alerts
+                    </strong>
+
+                    <p>
+                        Show warnings when products are low
+                    </p>
+
+                </div>
+
+                <input
+                    type="checkbox"
+                    id="lowStockAlerts"
+                    checked
+                >
+
+            </div>
+
+
+            <button
+                id="saveSettings"
+                class="save-settings-btn"
+            >
+                Save Settings
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <script src="js/theme.js"></script>
+
+    <script src="js/settings.js"></script>
+
+</body>
+
+</html>

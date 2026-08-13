@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Orders - ShopAdmin</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            🛒 <span>ShopAdmin</span>
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a href="index.html" class="nav-link">
+                📊 <span>Dashboard</span>
+            </a>
+
+            <a href="products.html" class="nav-link">
+                📦 <span>Products</span>
+            </a>
+
+            <a href="orders.html" class="nav-link active">
+                🛍️ <span>Orders</span>
+            </a>
+
+            <a href="inventory.html" class="nav-link">
+                📋 <span>Inventory</span>
+            </a>
+
+            <a href="analytics.html" class="nav-link">
+                📈 <span>Analytics</span>
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+           <a href="settings.html" class="nav-link">
+    ⚙️ <span>Settings</span>
+           </a>
+
+            <a href="#" id="logoutBtn" class="nav-link">
+    🚪 <span>Logout</span>
+            </a>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main class="main-content">
+
+
+        <!-- Header -->
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>Orders</h1>
+
+                <p>
+                    Manage and track customer orders
+                </p>
+
+            </div>
+
+
+            <div class="admin-profile">
+<button
+    id="themeToggle"
+    class="theme-toggle"
+    title="Toggle dark/light mode"
+>
+    🌙
+</button>
+                <div class="notification">
+                    🔔
+                </div>
+
+
+                <div class="profile">
+
+                    <div class="profile-avatar">
+                        A
+                    </div>
+
+                    <div>
+
+                        <strong>Admin</strong>
+
+                        <small>
+                            Administrator
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =========================
+             ORDER STATISTICS
+        ========================== -->
+
+        <section class="stats-grid">
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon orders-icon">
+                    🛒
+                </div>
+
+                <div class="stat-info">
+
+                    <p>
+                        Total Orders
+                    </p>
+
+                    <h2>
+                        1,248
+                    </h2>
+
+                    <span class="positive">
+                        ↑ 8.2% this month
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon customers-icon">
+                    ⏳
+                </div>
+
+                <div class="stat-info">
+
+                    <p>
+                        Pending
+                    </p>
+
+                    <h2>
+                        84
+                    </h2>
+
+                    <span class="negative">
+                        Needs attention
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon revenue-icon">
+                    🚚
+                </div>
+
+                <div class="stat-info">
+
+                    <p>
+                        Shipped
+                    </p>
+
+                    <h2>
+                        156
+                    </h2>
+
+                    <span class="positive">
+                        On the way
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon products-icon">
+                    ✅
+                </div>
+
+                <div class="stat-info">
+
+                    <p>
+                        Delivered
+                    </p>
+
+                    <h2>
+                        1,008
+                    </h2>
+
+                    <span class="positive">
+                        81% completed
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             ORDERS CARD
+        ========================== -->
+
+        <section class="dashboard-card orders-management">
+
+
+            <!-- Toolbar -->
+
+            <div class="orders-toolbar">
+
+
+                <div>
+
+                    <h3>
+                        All Orders
+                    </h3>
+
+                    <p>
+                        View and manage customer orders
+                    </p>
+
+                </div>
+
+
+
+                <div class="order-filters">
+
+
+                    <!-- Search -->
+
+                    <input
+                        type="text"
+                        id="orderSearch"
+                        placeholder="🔍 Search orders..."
+                    >
+
+
+
+                    <!-- Status -->
+
+                    <select id="statusFilter">
+
+                        <option value="all">
+                            All Status
+                        </option>
+
+                        <option value="Pending">
+                            Pending
+                        </option>
+
+                        <option value="Processing">
+                            Processing
+                        </option>
+
+                        <option value="Shipped">
+                            Shipped
+                        </option>
+
+                        <option value="Delivered">
+                            Delivered
+                        </option>
+
+                        <option value="Cancelled">
+                            Cancelled
+                        </option>
+
+                    </select>
+
+
+
+                    <!-- Date -->
+
+                    <select id="dateFilter">
+
+                        <option value="all">
+                            All Dates
+                        </option>
+
+                        <option value="today">
+                            Today
+                        </option>
+
+                        <option value="week">
+                            This Week
+                        </option>
+
+                        <option value="month">
+                            This Month
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =========================
+                 ORDER TABLE
+            ========================== -->
+
+            <div class="table-container">
+
+                <table id="ordersTable">
+
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Order ID
+                            </th>
+
+                            <th>
+                                Customer
+                            </th>
+
+                            <th>
+                                Date
+                            </th>
+
+                            <th>
+                                Items
+                            </th>
+
+                            <th>
+                                Amount
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                            <th>
+                                Action
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+
+                    <tbody id="ordersTableBody">
+
+
+                        <!-- Order 1 -->
+
+                        <tr
+                            data-status="Delivered"
+                            data-date="2026-08-13"
+                        >
+
+                            <td>
+                                <strong>#ORD001</strong>
+                            </td>
+
+                            <td>
+                                Rahul Kumar
+                            </td>
+
+                            <td>
+                                13 Aug 2026
+                            </td>
+
+                            <td>
+                                2
+                            </td>
+
+                            <td>
+                                ₹4,500
+                            </td>
+
+                            <td>
+
+                                <span class="status delivered">
+                                    Delivered
+                                </span>
+
+                            </td>
+
+                            <td>
+
+                                <button
+                                    class="view-order-btn"
+                                    data-order="ORD001"
+                                >
+                                    View
+                                </button>
+
+                                <button
+                                    class="status-btn"
+                                    data-order="ORD001"
+                                >
+                                    Status
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <!-- Order 2 -->
+
+                        <tr
+                            data-status="Pending"
+                            data-date="2026-08-12"
+                        >
+
+                            <td>
+                                <strong>#ORD002</strong>
+                            </td>
+
+                            <td>
+                                Priya Sharma
+                            </td>
+
+                            <td>
+                                12 Aug 2026
+                            </td>
+
+                            <td>
+                                1
+                            </td>
+
+                            <td>
+                                ₹2,800
+                            </td>
+
+                            <td>
+
+                                <span class="status pending">
+                                    Pending
+                                </span>
+
+                            </td>
+
+                            <td>
+
+                                <button
+                                    class="view-order-btn"
+                                    data-order="ORD002"
+                                >
+                                    View
+                                </button>
+
+                                <button
+                                    class="status-btn"
+                                    data-order="ORD002"
+                                >
+                                    Status
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <!-- Order 3 -->
+
+                        <tr
+                            data-status="Shipped"
+                            data-date="2026-08-11"
+                        >
+
+                            <td>
+                                <strong>#ORD003</strong>
+                            </td>
+
+                            <td>
+                                Arjun Reddy
+                            </td>
+
+                            <td>
+                                11 Aug 2026
+                            </td>
+
+                            <td>
+                                3
+                            </td>
+
+                            <td>
+                                ₹7,200
+                            </td>
+
+                            <td>
+
+                                <span class="status shipped">
+                                    Shipped
+                                </span>
+
+                            </td>
+
+                            <td>
+
+                                <button
+                                    class="view-order-btn"
+                                    data-order="ORD003"
+                                >
+                                    View
+                                </button>
+
+                                <button
+                                    class="status-btn"
+                                    data-order="ORD003"
+                                >
+                                    Status
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <!-- Order 4 -->
+
+                        <tr
+                            data-status="Processing"
+                            data-date="2026-08-10"
+                        >
+
+                            <td>
+                                <strong>#ORD004</strong>
+                            </td>
+
+                            <td>
+                                Sneha Rao
+                            </td>
+
+                            <td>
+                                10 Aug 2026
+                            </td>
+
+                            <td>
+                                4
+                            </td>
+
+                            <td>
+                                ₹1,950
+                            </td>
+
+                            <td>
+
+                                <span class="status processing">
+                                    Processing
+                                </span>
+
+                            </td>
+
+                            <td>
+
+                                <button
+                                    class="view-order-btn"
+                                    data-order="ORD004"
+                                >
+                                    View
+                                </button>
+
+                                <button
+                                    class="status-btn"
+                                    data-order="ORD004"
+                                >
+                                    Status
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <!-- Order 5 -->
+
+                        <tr
+                            data-status="Cancelled"
+                            data-date="2026-08-08"
+                        >
+
+                            <td>
+                                <strong>#ORD005</strong>
+                            </td>
+
+                            <td>
+                                Vikram Singh
+                            </td>
+
+                            <td>
+                                08 Aug 2026
+                            </td>
+
+                            <td>
+                                1
+                            </td>
+
+                            <td>
+                                ₹3,200
+                            </td>
+
+                            <td>
+
+                                <span class="status cancelled">
+                                    Cancelled
+                                </span>
+
+                            </td>
+
+                            <td>
+
+                                <button
+                                    class="view-order-btn"
+                                    data-order="ORD005"
+                                >
+                                    View
+                                </button>
+
+                                <button
+                                    class="status-btn"
+                                    data-order="ORD005"
+                                >
+                                    Status
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             ORDER STATUS MODAL
+        ========================== -->
+
+        <div
+            class="modal"
+            id="statusModal"
+        >
+
+            <div class="modal-content">
+
+
+                <div class="modal-header">
+
+                    <div>
+
+                        <h2>
+                            Update Order Status
+                        </h2>
+
+                        <p>
+                            Change the current order status
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        class="close-modal"
+                        id="closeStatusModal"
+                    >
+                        ×
+                    </button>
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label>
+                        Order ID
+                    </label>
+
+                    <input
+                        type="text"
+                        id="selectedOrder"
+                        readonly
+                    >
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label>
+                        New Status
+                    </label>
+
+                    <select id="newStatus">
+
+                        <option value="Pending">
+                            Pending
+                        </option>
+
+                        <option value="Processing">
+                            Processing
+                        </option>
+
+                        <option value="Shipped">
+                            Shipped
+                        </option>
+
+                        <option value="Delivered">
+                            Delivered
+                        </option>
+
+                        <option value="Cancelled">
+                            Cancelled
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <div class="modal-buttons">
+
+                    <button
+                        class="cancel-btn"
+                        id="cancelStatus"
+                    >
+                        Cancel
+                    </button>
+
+                    <button
+                        class="save-btn"
+                        id="saveStatus"
+                    >
+                        Update Status
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =========================
+             ORDER DETAILS MODAL
+        ========================== -->
+
+        <div
+            class="modal"
+            id="orderDetailsModal"
+        >
+
+            <div class="modal-content">
+
+
+                <div class="modal-header">
+
+                    <div>
+
+                        <h2>
+                            Order Details
+                        </h2>
+
+                        <p>
+                            Customer order information
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        class="close-modal"
+                        id="closeDetailsModal"
+                    >
+                        ×
+                    </button>
+
+                </div>
+
+
+
+                <div
+                    id="orderDetails"
+                    class="order-details"
+                >
+                </div>
+
+
+
+                <div class="modal-buttons">
+
+                    <button
+                        class="cancel-btn"
+                        id="closeDetails"
+                    >
+                        Close
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </main>
+
+
+    <script src="js/orders.js"></script>
+<script src="js/theme.js"></script>
+</body>
+
+</html>

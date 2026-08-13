@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Products - ShopAdmin</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            🛒 <span>ShopAdmin</span>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="index.html" class="nav-link">
+                📊 <span>Dashboard</span>
+            </a>
+
+            <a href="products.html" class="nav-link active">
+                📦 <span>Products</span>
+            </a>
+
+            <a href="orders.html" class="nav-link">
+                🛍️ <span>Orders</span>
+            </a>
+
+            <a href="inventory.html" class="nav-link">
+                📋 <span>Inventory</span>
+            </a>
+
+            <a href="analytics.html" class="nav-link">
+                📈 <span>Analytics</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <a href="settings.html" class="nav-link">
+    ⚙️ <span>Settings</span>
+            </a>
+
+            <a href="#" id="logoutBtn" class="nav-link">
+    🚪 <span>Logout</span>
+             </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Header -->
+        <header class="topbar">
+
+            <div>
+                <h1>Products</h1>
+                <p>Manage your store products</p>
+            </div>
+
+            <div class="admin-profile">
+<button
+    id="themeToggle"
+    class="theme-toggle"
+    title="Toggle dark/light mode"
+>
+    🌙
+</button>
+                <div class="notification">
+                    🔔
+                </div>
+
+                <div class="profile">
+
+                    <div class="profile-avatar">
+                        A
+                    </div>
+
+                    <div>
+                        <strong>Admin</strong>
+                        <small>Administrator</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- Product Summary -->
+        <section class="stats-grid">
+
+            <div class="stat-card">
+
+                <div class="stat-icon products-icon">
+                    📦
+                </div>
+
+                <div class="stat-info">
+                    <p>Total Products</p>
+                    <h2>156</h2>
+                    <span class="positive">↑ 8 new this month</span>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon revenue-icon">
+                    ✅
+                </div>
+
+                <div class="stat-info">
+                    <p>Active Products</p>
+                    <h2>142</h2>
+                    <span class="positive">91% active</span>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon customers-icon">
+                    ⚠️
+                </div>
+
+                <div class="stat-info">
+                    <p>Low Stock</p>
+                    <h2>9</h2>
+                    <span class="negative">Needs attention</span>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon orders-icon">
+                    ❌
+                </div>
+
+                <div class="stat-info">
+                    <p>Out of Stock</p>
+                    <h2>5</h2>
+                    <span class="negative">Restock required</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Product Management -->
+        <section class="dashboard-card product-management">
+
+            <!-- Toolbar -->
+            <div class="product-toolbar">
+
+                <div>
+                    <h3>All Products</h3>
+                    <p>Manage your product catalog</p>
+                </div>
+
+                <div class="product-actions">
+
+                    <input
+                        type="text"
+                        id="productSearch"
+                        placeholder="🔍 Search products..."
+                    >
+
+                    <select id="categoryFilter">
+
+                        <option value="all">
+                            All Categories
+                        </option>
+
+                        <option value="Electronics">
+                            Electronics
+                        </option>
+
+                        <option value="Accessories">
+                            Accessories
+                        </option>
+
+                        <option value="Wearables">
+                            Wearables
+                        </option>
+
+                        <option value="Home">
+                            Home & Living
+                        </option>
+
+                    </select>
+
+                    <button class="add-product-btn" id="addProductBtn">
+                        + Add Product
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Product Table -->
+            <div class="table-container">
+
+                <table id="productTable">
+
+                    <thead>
+
+                        <tr>
+                            <th>Product</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Stock</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="productTableBody">
+
+                        <tr>
+                            <td>
+                                <div class="product-name">
+                                    <div class="product-image">
+                                        💻
+                                    </div>
+
+                                    <div>
+                                        <strong>Laptop Pro 15</strong>
+                                        <small>SKU: LAP001</small>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td>Electronics</td>
+
+                            <td>₹65,000</td>
+
+                            <td>12</td>
+
+                            <td>
+                                <span class="status delivered">
+                                    Active
+                                </span>
+                            </td>
+
+                            <td>
+                                <button class="edit-btn">
+                                    Edit
+                                </button>
+
+                                <button class="delete-btn">
+                                    Delete
+                                </button>
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td>
+                                <div class="product-name">
+
+                                    <div class="product-image">
+                                        🎧
+                                    </div>
+
+                                    <div>
+                                        <strong>Wireless Headphones</strong>
+                                        <small>SKU: AUD002</small>
+                                    </div>
+
+                                </div>
+                            </td>
+
+                            <td>Accessories</td>
+
+                            <td>₹2,499</td>
+
+                            <td>
+                                <span class="stock-low">
+                                    4
+                                </span>
+                            </td>
+
+                            <td>
+                                <span class="status pending">
+                                    Low Stock
+                                </span>
+                            </td>
+
+                            <td>
+                                <button class="edit-btn">
+                                    Edit
+                                </button>
+
+                                <button class="delete-btn">
+                                    Delete
+                                </button>
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td>
+                                <div class="product-name">
+
+                                    <div class="product-image">
+                                        ⌚
+                                    </div>
+
+                                    <div>
+                                        <strong>Smart Watch</strong>
+                                        <small>SKU: WAT003</small>
+                                    </div>
+
+                                </div>
+                            </td>
+
+                            <td>Wearables</td>
+
+                            <td>₹4,999</td>
+
+                            <td>18</td>
+
+                            <td>
+                                <span class="status delivered">
+                                    Active
+                                </span>
+                            </td>
+
+                            <td>
+                                <button class="edit-btn">
+                                    Edit
+                                </button>
+
+                                <button class="delete-btn">
+                                    Delete
+                                </button>
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td>
+                                <div class="product-name">
+
+                                    <div class="product-image">
+                                        ⌨️
+                                    </div>
+
+                                    <div>
+                                        <strong>Mechanical Keyboard</strong>
+                                        <small>SKU: KEY004</small>
+                                    </div>
+
+                                </div>
+                            </td>
+
+                            <td>Accessories</td>
+
+                            <td>₹1,299</td>
+
+                            <td>
+                                <span class="stock-critical">
+                                    2
+                                </span>
+                            </td>
+
+                            <td>
+                                <span class="status pending">
+                                    Critical
+                                </span>
+                            </td>
+
+                            <td>
+                                <button class="edit-btn">
+                                    Edit
+                                </button>
+
+                                <button class="delete-btn">
+                                    Delete
+                                </button>
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td>
+                                <div class="product-name">
+
+                                    <div class="product-image">
+                                        🪑
+                                    </div>
+
+                                    <div>
+                                        <strong>Office Chair</strong>
+                                        <small>SKU: HOM005</small>
+                                    </div>
+
+                                </div>
+                            </td>
+
+                            <td>Home</td>
+
+                            <td>₹8,499</td>
+
+                            <td>25</td>
+
+                            <td>
+                                <span class="status delivered">
+                                    Active
+                                </span>
+                            </td>
+
+                            <td>
+                                <button class="edit-btn">
+                                    Edit
+                                </button>
+
+                                <button class="delete-btn">
+                                    Delete
+                                </button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- Add Product Modal -->
+
+        <div class="modal" id="productModal">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+
+                    <div>
+                        <h2>Add New Product</h2>
+                        <p>Enter product information</p>
+                    </div>
+
+                    <button class="close-modal" id="closeModal">
+                        ×
+                    </button>
+
+                </div>
+
+
+                <form id="productForm">
+
+                    <div class="form-group">
+
+                        <label>
+                            Product Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="productName"
+                            placeholder="Enter product name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label>
+                                Category
+                            </label>
+
+                            <select id="productCategory" required>
+
+                                <option value="">
+                                    Select Category
+                                </option>
+
+                                <option>
+                                    Electronics
+                                </option>
+
+                                <option>
+                                    Accessories
+                                </option>
+
+                                <option>
+                                    Wearables
+                                </option>
+
+                                <option>
+                                    Home
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Price
+                            </label>
+
+                            <input
+                                type="number"
+                                id="productPrice"
+                                placeholder="₹0"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Stock Quantity
+                        </label>
+
+                        <input
+                            type="number"
+                            id="productStock"
+                            placeholder="Enter stock"
+                            min="0"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="modal-buttons">
+
+                        <button
+                            type="button"
+                            class="cancel-btn"
+                            id="cancelModal"
+                        >
+                            Cancel
+                        </button>
+
+                        <button
+                            type="submit"
+                            class="save-btn"
+                        >
+                            Save Product
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <script src="js/products.js"></script>
+<script src="js/theme.js"></script>
+</body>
+</html>

@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Analytics - ShopAdmin</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            🛒 <span>ShopAdmin</span>
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a href="index.html" class="nav-link">
+                📊 <span>Dashboard</span>
+            </a>
+
+            <a href="products.html" class="nav-link">
+                📦 <span>Products</span>
+            </a>
+
+            <a href="orders.html" class="nav-link">
+                🛍️ <span>Orders</span>
+            </a>
+
+            <a href="inventory.html" class="nav-link">
+                📋 <span>Inventory</span>
+            </a>
+
+            <a href="analytics.html" class="nav-link active">
+                📈 <span>Analytics</span>
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+           <a href="settings.html" class="nav-link">
+    ⚙️ <span>Settings</span>
+           </a>
+
+            <a href="#" id="logoutBtn" class="nav-link">
+    🚪 <span>Logout</span>
+</a>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main class="main-content">
+
+
+        <!-- Header -->
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>
+                    Analytics
+                </h1>
+
+                <p>
+                    Monitor your store performance
+                </p>
+
+            </div>
+
+
+            <div class="admin-profile">
+<button
+    id="themeToggle"
+    class="theme-toggle"
+    title="Toggle dark/light mode"
+>
+    🌙
+</button>
+                <div class="notification">
+                    🔔
+                </div>
+
+
+                <div class="profile">
+
+                    <div class="profile-avatar">
+                        A
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Admin
+                        </strong>
+
+                        <small>
+                            Administrator
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =========================
+             DATE FILTER
+        ========================== -->
+
+        <section class="analytics-toolbar">
+
+
+            <div>
+
+                <h3>
+                    Sales Analytics
+                </h3>
+
+                <p>
+                    Analyze your store's performance
+                </p>
+
+            </div>
+
+
+            <div class="date-controls">
+
+                <label for="analyticsPeriod">
+                    Period:
+                </label>
+
+                <select id="analyticsPeriod">
+
+                    <option value="7">
+                        Last 7 Days
+                    </option>
+
+                    <option value="30" selected>
+                        Last 30 Days
+                    </option>
+
+                    <option value="90">
+                        Last 3 Months
+                    </option>
+
+                    <option value="365">
+                        This Year
+                    </option>
+
+                </select>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             ANALYTICS CARDS
+        ========================== -->
+
+        <section class="stats-grid">
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon revenue-icon">
+                    💰
+                </div>
+
+                <div class="stat-info">
+
+                    <p>
+                        Revenue
+                    </p>
+
+                    <h2 id="analyticsRevenue">
+                        ₹1,24,500
+                    </h2>
+
+                    <span class="positive">
+                        ↑ 12.5%
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon orders-icon">
+                    🛒
+                </div>
+
+                <div class="stat-info">
+
+                    <p>
+                        Orders
+                    </p>
+
+                    <h2 id="analyticsOrders">
+                        1,248
+                    </h2>
+
+                    <span class="positive">
+                        ↑ 8.2%
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon customers-icon">
+                    👥
+                </div>
+
+                <div class="stat-info">
+
+                    <p>
+                        Customers
+                    </p>
+
+                    <h2>
+                        3,842
+                    </h2>
+
+                    <span class="positive">
+                        ↑ 5.7%
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon products-icon">
+                    💳
+                </div>
+
+                <div class="stat-info">
+
+                    <p>
+                        Average Order
+                    </p>
+
+                    <h2>
+                        ₹2,450
+                    </h2>
+
+                    <span class="positive">
+                        ↑ 4.1%
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             REVENUE CHART
+        ========================== -->
+
+        <section class="analytics-chart-grid">
+
+
+            <div class="dashboard-card large-chart">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h3>
+                            Revenue Trend
+                        </h3>
+
+                        <p>
+                            Revenue performance over time
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="chart-container">
+
+                    <canvas id="revenueChart">
+                    </canvas>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ORDERS CHART -->
+
+            <div class="dashboard-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h3>
+                            Orders
+                        </h3>
+
+                        <p>
+                            Order volume
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="chart-container">
+
+                    <canvas id="ordersChart">
+                    </canvas>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             CATEGORY + TOP PRODUCTS
+        ========================== -->
+
+        <section class="analytics-bottom-grid">
+
+
+            <!-- Category -->
+
+            <div class="dashboard-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h3>
+                            Sales by Category
+                        </h3>
+
+                        <p>
+                            Product category performance
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="pie-chart-container">
+
+                    <canvas id="categoryChart">
+                    </canvas>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Top Products -->
+
+            <div class="dashboard-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h3>
+                            Top Selling Products
+                        </h3>
+
+                        <p>
+                            Best performing products
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="top-products">
+
+
+                    <div class="top-product">
+
+                        <div class="rank">
+                            1
+                        </div>
+
+                        <div class="top-product-icon">
+                            💻
+                        </div>
+
+                        <div class="top-product-info">
+
+                            <strong>
+                                Laptop Pro 15
+                            </strong>
+
+                            <span>
+                                245 units sold
+                            </span>
+
+                        </div>
+
+                        <strong>
+                            ₹65K
+                        </strong>
+
+                    </div>
+
+
+
+                    <div class="top-product">
+
+                        <div class="rank">
+                            2
+                        </div>
+
+                        <div class="top-product-icon">
+                            🎧
+                        </div>
+
+                        <div class="top-product-info">
+
+                            <strong>
+                                Wireless Headphones
+                            </strong>
+
+                            <span>
+                                198 units sold
+                            </span>
+
+                        </div>
+
+                        <strong>
+                            ₹2.5K
+                        </strong>
+
+                    </div>
+
+
+
+                    <div class="top-product">
+
+                        <div class="rank">
+                            3
+                        </div>
+
+                        <div class="top-product-icon">
+                            ⌚
+                        </div>
+
+                        <div class="top-product-info">
+
+                            <strong>
+                                Smart Watch
+                            </strong>
+
+                            <span>
+                                176 units sold
+                            </span>
+
+                        </div>
+
+                        <strong>
+                            ₹5K
+                        </strong>
+
+                    </div>
+
+
+
+                    <div class="top-product">
+
+                        <div class="rank">
+                            4
+                        </div>
+
+                        <div class="top-product-icon">
+                            ⌨️
+                        </div>
+
+                        <div class="top-product-info">
+
+                            <strong>
+                                Mechanical Keyboard
+                            </strong>
+
+                            <span>
+                                142 units sold
+                            </span>
+
+                        </div>
+
+                        <strong>
+                            ₹1.3K
+                        </strong>
+
+                    </div>
+
+
+
+                    <div class="top-product">
+
+                        <div class="rank">
+                            5
+                        </div>
+
+                        <div class="top-product-icon">
+                            🪑
+                        </div>
+
+                        <div class="top-product-info">
+
+                            <strong>
+                                Office Chair
+                            </strong>
+
+                            <span>
+                                121 units sold
+                            </span>
+
+                        </div>
+
+                        <strong>
+                            ₹8.5K
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- Chart.js -->
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+    <!-- Our Analytics JavaScript -->
+
+    <script src="js/analytics.js"></script>
+    <script src="js/theme.js"></script>
+
+
+</body>
+
+</html>
